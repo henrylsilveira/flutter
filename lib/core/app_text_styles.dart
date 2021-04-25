@@ -9,6 +9,16 @@ class AppTextStyles {
     fontSize: 20,
     fontWeight: FontWeight.w400,
   );
+  static final TextStyle titleSplash = GoogleFonts.notoSans(
+    color: AppColors.darkGreen,
+    fontSize: 48,
+    fontWeight: FontWeight.w600,
+  );
+  static final TextStyle titleSplash2 = GoogleFonts.notoSans(
+    color: AppColors.lightGreen,
+    fontSize: 34,
+    fontWeight: FontWeight.w400,
+  );
 
   static final TextStyle titleBold = GoogleFonts.notoSans(
     color: AppColors.white,

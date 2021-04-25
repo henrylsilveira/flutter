@@ -1,5 +1,8 @@
+import 'package:DevQuiz/animal/CadastroAnimal.dart';
 import 'package:DevQuiz/animal/animal_page.dart';
 import 'package:DevQuiz/home/home_page.dart';
+import 'package:DevQuiz/login/EsqueciSenha.dart';
+import 'package:DevQuiz/login/LoginPage.dart';
 import 'package:DevQuiz/splash/splash_page.dart';
 import 'package:flutter/material.dart';
 

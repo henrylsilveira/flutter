@@ -10,8 +10,6 @@ import 'package:flutter/material.dart';
 import '../animal.dart';
 
 class AnimalPage extends StatefulWidget {
-  AnimalPage({Key? key}) : super(key: key);
-
   @override
   _AnimalPageState createState() => _AnimalPageState();
 }
@@ -19,6 +17,7 @@ class AnimalPage extends StatefulWidget {
 class _AnimalPageState extends State<AnimalPage> {
   List<Animal> _animal = [];
   List<Animal> listAnimal = [];
+
   Future<List<Animal>> _getAnimal() async {
     try {
       String url = '192.168.1.68:5000';
@@ -47,6 +46,7 @@ class _AnimalPageState extends State<AnimalPage> {
 
   @override
   Widget build(BuildContext context) {
+    print(_animal.length);
     return Scaffold(
       appBar: AppBarWidget(),
       body: SafeArea(
@@ -98,7 +98,8 @@ class _AnimalPageState extends State<AnimalPage> {
                                         Padding(
                                           padding:
                                               const EdgeInsets.only(top: 5),
-                                          child: Text("Raça:"),
+                                          child: Text(
+                                              "Raça:" + _animal[index].raca),
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.symmetric(
