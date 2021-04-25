@@ -2,6 +2,7 @@ import 'package:DevQuiz/core/app_gradients.dart';
 import 'package:DevQuiz/core/app_text_styles.dart';
 import 'package:DevQuiz/core/patterns.dart';
 import 'package:DevQuiz/home/home_page.dart';
+import 'package:DevQuiz/login/EsqueciSenha.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -92,7 +93,8 @@ class _MyHomePageState extends State<LoginPage> {
     return Container(
       alignment: Alignment.centerRight,
       child: FlatButton(
-        onPressed: () => Navigator.of(context).pushNamed('/esqueciSenha'),
+        onPressed: () => Navigator.push(context,
+            MaterialPageRoute(builder: (context) => EsqueciSenhaPage())),
         padding: EdgeInsets.only(right: 0.0),
         child: Text(
           'Esqueceu sua senha?',
@@ -182,17 +184,16 @@ class _MyHomePageState extends State<LoginPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Padding(
-                        padding: const EdgeInsets.only(left: 100, bottom: 20),
-                        child: Center(
-                          child: Row(
-                            children: [
-                              Text('PET', style: AppTextStyles.titleServices),
-                              Text(
-                                'shop',
-                                style: AppTextStyles.titleBold,
-                              ),
-                            ],
-                          ),
+                        padding: const EdgeInsets.only(bottom: 20),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('PET', style: AppTextStyles.titleServices),
+                            Text(
+                              'shop',
+                              style: AppTextStyles.titleBold,
+                            ),
+                          ],
                         ),
                       ),
                       Text(

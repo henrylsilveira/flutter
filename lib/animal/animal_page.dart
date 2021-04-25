@@ -48,7 +48,6 @@ class _AnimalPageState extends State<AnimalPage> {
   Widget build(BuildContext context) {
     print(_animal.length);
     return Scaffold(
-      appBar: AppBarWidget(),
       body: SafeArea(
         child: ListView.builder(
           itemCount: _animal.length,
@@ -152,7 +151,6 @@ class _AnimalPageState extends State<AnimalPage> {
           },
         ),
       ),
-      bottomNavigationBar: BottomBarWidget(),
     );
   }
 }
