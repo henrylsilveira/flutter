@@ -1,6 +1,6 @@
-import 'package:DevQuiz/core/app_colors.dart';
-import 'package:DevQuiz/core/app_gradients.dart';
-import 'package:DevQuiz/core/core.dart';
+import 'package:PETshop/core/app_colors.dart';
+import 'package:PETshop/core/app_gradients.dart';
+import 'package:PETshop/core/core.dart';
 import 'package:flutter/material.dart';
 
 class CardServicesWidget extends StatelessWidget {

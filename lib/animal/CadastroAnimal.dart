@@ -1,14 +1,14 @@
-import 'package:DevQuiz/core/app_colors.dart';
-import 'package:DevQuiz/core/app_gradients.dart';
-import 'package:DevQuiz/core/app_text_styles.dart';
-import 'package:DevQuiz/core/patterns.dart';
-import 'package:DevQuiz/home/home_page.dart';
+import 'package:PETshop/core/app_colors.dart';
+import 'package:PETshop/core/app_gradients.dart';
+import 'package:PETshop/core/app_text_styles.dart';
+import 'package:PETshop/core/patterns.dart';
+import 'package:PETshop/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-import '../animal.dart';
+import '../models/animal.dart';
 
 class CadastroAnimalPage extends StatefulWidget {
   @override
@@ -26,10 +26,37 @@ class CadastroAnimalState extends State<CadastroAnimalPage> {
           <String, String>{'nome': _nome, 'raca': _raca, 'user_id': '1'}),
     );
     if (response.statusCode == 201) {
-      return Animal.fromJson(jsonDecode(response.body));
+      return _showMyDialog();
     } else {
-      throw Exception('Failed');
+      throw Exception('Erro ao cadastrar');
     }
+  }
+
+  _showMyDialog() async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('SUCESSO!'),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text('Novo animalzinho cadastrado.'),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: Text('OK'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 
   final TextEditingController _nome = TextEditingController();

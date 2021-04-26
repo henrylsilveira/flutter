@@ -1,9 +1,5 @@
-import 'package:DevQuiz/animal/CadastroAnimal.dart';
-import 'package:DevQuiz/animal/animal_page.dart';
-import 'package:DevQuiz/home/home_page.dart';
-import 'package:DevQuiz/login/EsqueciSenha.dart';
-import 'package:DevQuiz/login/LoginPage.dart';
-import 'package:DevQuiz/splash/splash_page.dart';
+import 'package:PETshop/login/LoginPage.dart';
+import 'package:PETshop/splash/splash_page.dart';
 import 'package:flutter/material.dart';
 
 class AppWidget extends StatelessWidget {
@@ -11,7 +7,7 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "DevQuiz",
-      home: LoginPage(title: 'Login'),
+      home: LoginPage(),
     );
   }
 }

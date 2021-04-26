@@ -1,6 +1,6 @@
-import 'package:DevQuiz/core/app_gradients.dart';
-import 'package:DevQuiz/core/app_text_styles.dart';
-import 'package:DevQuiz/home/widgets/card/card_widget.dart';
+import 'package:PETshop/core/app_gradients.dart';
+import 'package:PETshop/core/app_text_styles.dart';
+import 'package:PETshop/home/widgets/card/card_widget.dart';
 import 'package:flutter/material.dart';
 
 class AppBarWidget extends PreferredSize {

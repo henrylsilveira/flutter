@@ -1,13 +1,12 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:DevQuiz/core/app_colors.dart';
-import 'package:DevQuiz/core/app_gradients.dart';
-import 'package:DevQuiz/core/app_text_styles.dart';
-import 'package:DevQuiz/home/widgets/appbar/app_bar_widget.dart';
-import 'package:DevQuiz/home/widgets/bottombar/bottom_bar.dart';
+import 'package:PETshop/core/app_colors.dart';
+import 'package:PETshop/core/app_gradients.dart';
+import 'package:PETshop/core/app_text_styles.dart';
+import 'package:PETshop/home/widgets/appbar/app_bar_widget.dart';
 import 'package:flutter/material.dart';
 
-import '../animal.dart';
+import '../models/animal.dart';
 
 class AnimalPage extends StatefulWidget {
   @override
@@ -24,7 +23,11 @@ class _AnimalPageState extends State<AnimalPage> {
       final response = await http.get(Uri.http(url, '/animal/list'));
       if (response.statusCode == 200) {
         var decodeJson = jsonDecode(response.body);
-        print(decodeJson[0]['nome']);
+        for (var i = 0; i < 10; i++) {
+          print(decodeJson[i]['nome']);
+          print(decodeJson[i]['raca']);
+        }
+
         decodeJson.forEach((item) => listAnimal.add(Animal.fromJson(item)));
         return listAnimal;
       } else {
@@ -38,10 +41,7 @@ class _AnimalPageState extends State<AnimalPage> {
   @override
   void initState() {
     super.initState();
-    _getAnimal().then((map) {
-      _animal = map;
-      print(_animal.length);
-    });
+    _getAnimal().then((map) => {_animal = map});
   }
 
   @override

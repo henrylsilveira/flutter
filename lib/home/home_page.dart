@@ -1,7 +1,7 @@
-import 'package:DevQuiz/animal/CadastroAnimal.dart';
-import 'package:DevQuiz/animal/animal_page.dart';
-import 'package:DevQuiz/home/widgets/appbar/app_bar_widget.dart';
-import 'package:DevQuiz/home/widgets/card/card_services.dart';
+import 'package:PETshop/animal/CadastroAnimal.dart';
+import 'package:PETshop/animal/animal_page.dart';
+import 'package:PETshop/home/widgets/appbar/app_bar_widget.dart';
+import 'package:PETshop/home/widgets/card/card_services.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {

@@ -1,5 +1,5 @@
-import 'package:DevQuiz/core/app_gradients.dart';
-import 'package:DevQuiz/core/patterns.dart';
+import 'package:PETshop/core/app_gradients.dart';
+import 'package:PETshop/core/patterns.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
