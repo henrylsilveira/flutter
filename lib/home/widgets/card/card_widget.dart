@@ -29,12 +29,14 @@ class CardWidget extends StatelessWidget {
           children: [
             Expanded(
               flex: 1,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 12),
-                child: Container(
-                  height: 80,
-                  width: 80,
-                  color: Colors.red,
+              child: Container(
+                width: 58,
+                height: 58,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  image: DecorationImage(
+                    image: NetworkImage("/assets/images/dog.png"),
+                  ),
                 ),
               ),
             ),
@@ -47,7 +49,7 @@ class CardWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text("Vamos começar"),
-                    Text("Complete os desafios e avance em conhecimento"),
+                    Text("Selecione o serviço que deseja agendar:"),
                   ],
                 ),
               ),

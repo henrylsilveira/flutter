@@ -34,12 +34,14 @@ class CardServicesWidget extends StatelessWidget {
                 children: [
                   Expanded(
                     flex: 1,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 12),
-                      child: Container(
-                        height: 80,
-                        width: 80,
-                        color: Colors.red,
+                    child: Container(
+                      width: 58,
+                      height: 58,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                          image: NetworkImage("/assets/images/banho.png"),
+                        ),
                       ),
                     ),
                   ),
@@ -70,12 +72,14 @@ class CardServicesWidget extends StatelessWidget {
                 children: [
                   Expanded(
                     flex: 1,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 12),
-                      child: Container(
-                        height: 80,
-                        width: 80,
-                        color: Colors.red,
+                    child: Container(
+                      width: 58,
+                      height: 58,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                          image: NetworkImage("/assets/images/tosa.png"),
+                        ),
                       ),
                     ),
                   ),
@@ -106,12 +110,14 @@ class CardServicesWidget extends StatelessWidget {
                 children: [
                   Expanded(
                     flex: 1,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 12),
-                      child: Container(
-                        height: 80,
-                        width: 80,
-                        color: Colors.red,
+                    child: Container(
+                      width: 58,
+                      height: 58,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                          image: NetworkImage("/assets/images/consulta.jpg"),
+                        ),
                       ),
                     ),
                   ),
@@ -142,12 +148,14 @@ class CardServicesWidget extends StatelessWidget {
                 children: [
                   Expanded(
                     flex: 1,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 12),
-                      child: Container(
-                        height: 80,
-                        width: 80,
-                        color: Colors.red,
+                    child: Container(
+                      width: 58,
+                      height: 58,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                          image: NetworkImage("/assets/images/vacina.jpg"),
+                        ),
                       ),
                     ),
                   ),

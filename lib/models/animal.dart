@@ -1,30 +1,23 @@
 class Animal {
-  int id;
-  String nome;
-  String raca;
-  int userId;
+  int id = 0;
+  String nome = "";
+  String raca = "";
+  int userId = 0;
 
-  Animal(
-      {required this.id,
-      required this.nome,
-      required this.raca,
-      required this.userId});
-
-  factory Animal.fromJson(Map<String, dynamic> json) {
-    return Animal(
-      id: json['id'],
-      nome: json['nome'],
-      raca: json['raca'],
-      userId: json['user_id'],
-    );
+  Animal(int id, String nome, String raca, int userId) {
+    this.id = id;
+    this.nome = nome;
+    this.raca = raca;
+    this.userId = userId;
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['nome'] = this.nome;
-    data['raca'] = this.raca;
-    data['user_id'] = this.userId;
-    return data;
+  Animal.fromJson(Map json)
+      : id = json['id'],
+        nome = json['nome'],
+        raca = json['raca'],
+        userId = json['user_id'];
+
+  Map toJson() {
+    return {'id': id, 'nome': nome, 'raca': raca, 'user_id': userId};
   }
 }

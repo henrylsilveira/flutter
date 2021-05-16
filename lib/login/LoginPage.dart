@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:local_auth/local_auth.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -15,6 +16,51 @@ class LoginPage extends StatefulWidget {
 }
 
 class LoginPageState extends State<LoginPage> {
+  final LocalAuthentication _localAuthentication = LocalAuthentication();
+
+  @override
+  initState() {
+    super.initState();
+    authenticate();
+  }
+
+  authenticate() async {
+    if (await _isBiometricAvailable()) {
+      await _getListOfBiometricTypes();
+      await _authenticateUser();
+    }
+  }
+
+  Future<bool> _isBiometricAvailable() async {
+    try {
+      bool isAvailable = await _localAuthentication.canCheckBiometrics;
+      return isAvailable;
+    } catch (ex) {
+      return false;
+    }
+  }
+
+  Future<void> _getListOfBiometricTypes() async {
+    List<BiometricType> listOfBiometrics =
+        await _localAuthentication.getAvailableBiometrics();
+  }
+
+  Future<void> _authenticateUser() async {
+    bool isAuthenticated =
+        await _localAuthentication.authenticateWithBiometrics(
+            localizedReason: 'Please authenticate to view your animals',
+            useErrorDialogs: true,
+            stickyAuth: true);
+
+    if (isAuthenticated) {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => HomePage(),
+        ),
+      );
+    }
+  }
+
   Future<User> validateUser(String _email, String _senha) async {
     final response = await http.post(
       Uri.http('192.168.1.68:5000', '/usuario/validate'),
@@ -230,7 +276,7 @@ class LoginPageState extends State<LoginPage> {
                           elevation: 5.0,
                           onPressed: () {
                             setState(() {
-                              _usuario = validateUser(_email.text, _senha.text);
+                              validateUser(_email.text, _senha.text);
                             });
                           },
                           padding: EdgeInsets.all(15.0),

@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBarWidget(),
       body: _telas[_indiceAtual],
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
+        currentIndex: _indiceAtual,
         onTap: onTabTapped,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("Home")),
