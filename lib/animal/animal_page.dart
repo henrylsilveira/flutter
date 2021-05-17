@@ -46,6 +46,20 @@ class _AnimalPageState extends State {
     super.dispose();
   }
 
+  void goVacina(int id) {
+    setState(() {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => VacinaPage(id)));
+    });
+  }
+
+  void goConsulta(int id) {
+    setState(() {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => ConsultaPage(id)));
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,12 +124,7 @@ class _AnimalPageState extends State {
                                                   left: 10),
                                               child: OutlinedButton.icon(
                                                 onPressed: () {
-                                                  Navigator.push(
-                                                      context,
-                                                      MaterialPageRoute(
-                                                          builder: (BuildContext
-                                                                  context) =>
-                                                              VacinaPage()));
+                                                  goVacina(animais[index].id);
                                                 },
                                                 icon: Icon(Icons.add, size: 12),
                                                 label: Text("Vacinas"),
@@ -126,12 +135,7 @@ class _AnimalPageState extends State {
                                                   right: 15),
                                               child: OutlinedButton.icon(
                                                 onPressed: () {
-                                                  Navigator.push(
-                                                      context,
-                                                      MaterialPageRoute(
-                                                          builder: (BuildContext
-                                                                  context) =>
-                                                              ConsultaPage()));
+                                                  goConsulta(animais[index].id);
                                                 },
                                                 icon: Icon(Icons.add, size: 12),
                                                 label: Text("Consultas"),

@@ -3,9 +3,15 @@ import 'package:PETshop/core/app_gradients.dart';
 import 'package:PETshop/core/core.dart';
 import 'package:flutter/material.dart';
 
-class ConsultaPage extends StatelessWidget {
-  const ConsultaPage({Key? key}) : super(key: key);
+class ConsultaPage extends StatefulWidget {
+  int id = 0;
+  ConsultaPage(this.id);
 
+  @override
+  _ConsultaPageState createState() => _ConsultaPageState();
+}
+
+class _ConsultaPageState extends State<ConsultaPage> {
   @override
   Widget build(BuildContext context) {
     return Padding(
